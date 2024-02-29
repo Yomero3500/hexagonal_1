@@ -17,7 +17,7 @@ export class AddVentaUseCase{
                 precio
             )
             if (venta) {
-               // this.sendNotification.run(venta)
+               this.sendNotification.run(venta)
             }
             return venta;
         } catch (error) {
