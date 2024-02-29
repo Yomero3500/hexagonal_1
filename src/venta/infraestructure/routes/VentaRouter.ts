@@ -4,4 +4,4 @@ import { AddVentaController } from "../controllers/addVentaController";
 
 export const ventaRouter= express.Router();
 
-ventaRouter.post("./",AddVentaController.arguments.bind(AddVentaController))
+ventaRouter.post("/",AddVentaController.arguments.bind(AddVentaController))
