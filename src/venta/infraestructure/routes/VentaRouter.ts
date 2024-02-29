@@ -1,7 +1,7 @@
 import express from "express";
 
-import { AddVentaController } from "../controllers/addVentaController";
+import { addVentaController} from "../dependencies/dependencies";
 
 export const ventaRouter= express.Router();
 
-ventaRouter.post("/",AddVentaController.arguments.bind(AddVentaController))
+ventaRouter.post("/", addVentaController.run.bind(addVentaController))
