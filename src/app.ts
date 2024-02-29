@@ -5,6 +5,7 @@ import { Signale } from 'signale';
 import helmet from 'helmet';
 import * as dotenv from "dotenv";
 dotenv.config();
+import { ventaRouter } from './venta/infraestructure/routes/VentaRouter';
 
 
 const port: string | undefined = process.env.PORT;
@@ -18,6 +19,8 @@ app.use(cors());
 app.use(helmet.hidePoweredBy())
 app.use(express.json());
 app.use(morgan("dev"));
+app.use("/ventas",ventaRouter)
+
 
 app.listen(port, ()=>{
     signale.success("server running in port: "+port)
