@@ -10,6 +10,7 @@ export class AddVentaUseCase{
         contenido: string,
         precio: number
     ): Promise<Venta|null> {
+
         try {
             const venta:any = await this.ventaRepository.createVenta(
                 id_venta,

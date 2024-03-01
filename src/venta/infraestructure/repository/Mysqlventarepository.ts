@@ -7,8 +7,8 @@ export class MysqlVentaRepository implements VentaRepository{
     const sql =  "INSERT INTO ventas (id_venta, contenido, precio) VALUES (?,?,?)";
     const parametros: any[] = [id_venta, contenido, precio];
     try {
-        const [result]: any = await query(sql, parametros);
-        return new Venta(result.id_venta, result.contenido, result.precio)
+        const [result]: any = await query(sql, parametros);        
+        return new Venta(id_venta, contenido,precio)
     } catch (error) {
         console.log("Error: " + error);
         return null;

@@ -12,7 +12,7 @@ export class AddVentaController {
                 data.contenido,
                 data.precio
             )
-            if (venta) {
+            if (venta) {      
                 res.status(201).send({
                     status: "succes",
                     data:{
