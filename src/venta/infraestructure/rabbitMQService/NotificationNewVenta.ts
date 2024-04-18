@@ -15,7 +15,9 @@ export class NotificationNewVenta implements INotificationNewVenta{
         const conn = await amqplib.connect(this.url);
         const channel = await conn.createChannel();
         console.log(venta.id_venta);
-        console.log(JSON.stringify(venta.id_venta));
+        console.log(venta.id_venta);
+        
+        console.log(Buffer.from(JSON.stringify(venta.id_venta)));
         
         const status = await channel.publish(this.exch,'12345', Buffer.from(JSON.stringify(venta.id_venta)))
         console.log(venta.id_venta);
